@@ -42,10 +42,15 @@ Router.post('/courses/add', Controller.addCourse)
 
 
 Router.get('/course/:id', UserController.detailcourse)
+Router.get('/courses/:id/buy', UserController.buyCourses)
 
-
+Router.use(isInstructor)
 //delete course by id
-// Router.get('/course/:id/delete', Controller.deleteCourseById)
+Router.get('/course/:id/delete', Controller.deleteCourseById)
+
+
+//edit course form
+Router.get('/course/:id/edit', Controller.editCourseForm)
 
 
 

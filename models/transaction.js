@@ -12,11 +12,14 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Transaction.belongsTo(models.User)
-      Transaction.belongsTo(models.Course)
+      Transaction.belongsTo(models.Course, {
+        foreignKey: 'CourseId',
+        onDelete: 'cascade'
+      })
     }
   }
   Transaction.init({
-    CourseId: DataTypes.INTEGER,
+    CourseId: {type: DataTypes.INTEGER, onDelete: 'CASCADE'},
     UserId: DataTypes.INTEGER
   }, {
     sequelize,

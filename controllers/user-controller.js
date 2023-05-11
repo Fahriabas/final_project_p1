@@ -1,6 +1,6 @@
 
 const { checkPassword } = require('../helpers/bcrypt')
-const { User, Course } = require('../models')
+const { User, Course, Transaction, Profile } = require('../models')
 
 class UserController{
     static registerForm(req, res){
@@ -67,6 +67,7 @@ class UserController{
     }
 
     static detailcourse(req, res){
+        console.log(req.session , 'session fahri line 70');
         const { id } = req.params
         console.log(req.params);
         Course.findOne({
@@ -79,6 +80,15 @@ class UserController{
         .catch(err => {
             res.send(err)
             console.log(err);
+        })
+    }
+
+    static buyCourses(req, res){
+        console.log(req.params)
+        // console.log(req.session, 'ini isinya');
+        const { id } = req.params
+        Transaction.create({
+            id,
         })
     }
 }

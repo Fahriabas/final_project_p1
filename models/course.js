@@ -11,7 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Course.hasMany(models.Transaction)
+      Course.hasMany(models.Transaction , {
+        foreignKey: 'CourseId',
+        onDelete: 'cascade',
+  hooks: true, 
+      })
       Course.belongsTo(models.User)
     }
   }

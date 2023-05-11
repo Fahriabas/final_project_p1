@@ -3,42 +3,49 @@
         "name": "The Complete 2023 Web Development Bootcamp",
         "description": "Become a Full-Stack Web Developer with just ONE course. HTML, CSS, Javascript, Node, React, MongoDB, Web3 and DApps",
         "category": "Coding",
+        "price": 99000,
         "UserId": 1
     },
     {
         "name": "Digital Product Design Masterclass",
-        "description": "Chris",
+        "description": "Use these simple Innovation Strategies for your Business",
         "category": "Design",
+        "price": 120000,
         "UserId": 2
     },
     {
         "name": "Graphic Design Masterclass - Learn GREAT Design",
         "description": "The Ultimate Graphic Design Course Which Covers Photoshop, Illustrator, InDesign,Design Theory, Branding and Logo Design",
         "category": "Marketing",
+        "price": 150000,
         "UserId": 3
     },
     {
         "name": "Business Model Innovation: Differentiate & Grow Your Company",
         "description": "Use these simple Innovation Strategies for your Business Model to Accelerate the Growth of your Business",
         "category": "Business",
+        "price": 20000,
         "UserId": 4
     },
     {
         "name": "The Complete Python Bootcamp From Zero to Hero in Python",
         "description": "Learn Python like a Professional Start from the basics and go all the way to creating your own applications and games",
         "category": "Coding",
+        "price": 99000,
         "UserId": 5
     },
     {
         "name": "The Complete Financial Analyst Course 2023",
         "description": "Excel, Accounting, Financial Statement Analysis, Business Analysis, Financial Math, PowerPoint: Everything is Included!",
         "category": "Finance",
+        "price": 130000,
         "UserId": 6
     },
     {
         "name": "Master Digital Product Design: UX Research & UI Design",
         "description": "A complete design education for product designers: Research the user experience, then design a great user interface",
         "category": "Design",
+        "price": 150000,
         "UserId": 7
     }
 ]

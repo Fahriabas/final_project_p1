@@ -1,4 +1,5 @@
-const { User, Course } = require('../models')
+
+const { User, Course, Transaction } = require('../models')
 
 class Controller{
     static home(req, res){
@@ -61,21 +62,38 @@ class Controller{
         })
     }
 
-    // static deleteCourseById(req, res){
-    //     const{} = req.params
-    //     const{id} = req.params
-    //     User.destroy({where:{UserId : id}})
-    //     .then(result=>{
-    //         return Post.destroy({where:{id:UserId}})
-    //     })
-    //     .then(result=>{
-    //         res.redirect('/courses')
-    //     })
-    //     .catch(err =>{
-    //         // console.log(err)
-    //         res.send(err)
-    //     })
-    // }
+    static deleteCourseById(req, res){
+        // const{} = req.params
+        const{id} = req.params
+        Transaction.destroy({
+            where: {
+                CourseId: id
+                
+            }
+        }).then(() => {
+            return Course.destroy({where:{id}})
+        })
+        
+        // .then(result=>{
+        //     return User.destroy({where:{UserId: id}})
+        // })
+        .then(result=>{
+            res.redirect('/courses')
+        })
+        .catch(err =>{
+            // console.log(err)
+            res.send(err)
+        })
+    }
+
+    static editCourseForm (req, res){
+        const {UserId} = req.params
+        Course.findByPk(UserId)
+            .then(data=> {
+                res.render('editCourseForm',{data,UserId})})
+            .catch(err=> res.send(err))
+    }
+
 
 }
 

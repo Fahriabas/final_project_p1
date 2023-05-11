@@ -1,0 +1,45 @@
+[
+    {
+        "email": "Vivien@gmail.com",
+        "password": "1234",
+        "role": "Student",
+        "gender": "Female"
+    },
+    {
+        "email": "Chris@hotmail.com",
+        "password": "4321",
+        "role": "Student",
+        "gender": "Male"
+    },
+    {
+        "email": "Estrellita@gmail.com",
+        "password": "3232",
+        "role": "Student",
+        "gender": "Female"
+
+    },
+    {
+        "email": "Mariquilla@gmail.com",
+        "password": "2323",
+        "role": "Instructor",
+        "gender": "Female"
+    },
+    {
+        "email": "Lorita@gmail.com",
+        "password": "1212",
+        "role": "Instructor",
+        "gender": "Female"
+    },
+    {
+        "email": "Jamet@gmail.com",
+        "password": "2323",
+        "role": "Student",
+        "gender": "Male"
+    },
+    {
+        "email": "kimdjanchook@gmail.com",
+        "password": "3434",
+        "role": "Instructor",
+        "gender": "Male"
+    }
+]

@@ -11,7 +11,9 @@ Router.use((req,res,next) => {
     console.log(req.session , 'fahri');
     next()
 })
-Router.get('/', Controller.home)
+Router.get('/', (req,res) =>{
+    res.redirect('/login')
+})
 
 
 //register form
@@ -19,38 +21,33 @@ Router.get('/register', UserController.registerForm)
 
 // post-register
 Router.post('/register', UserController.postRegister)
-
-
-
+// Router.get('/login', UserController.loginForm)
 Router.get('/login', UserController.loginForm)
 
 //post login
 Router.post('/login', UserController.postLogin)
+
 
 Router.use(isloggedIn)
 // Router.use(isInstructor)
 
 //menampilkan all courses
 Router.get('/courses', UserController.showCourses)
-
-
-
-//menambahkan courses
-Router.get('/courses/add', Controller.addForm)
-Router.post('/courses/add', Controller.addCourse)
-
-
+Router.get('/logout', UserController.logout)
 
 Router.get('/course/:id', UserController.detailcourse)
-Router.get('/courses/:id/buy', UserController.buyCourses)
+// Router.get('/courses/:id/buy', UserController.buyCourses)
+Router.get('/courses/:courseId/buy', UserController.buyCourse)
+
 
 Router.use(isInstructor)
 //delete course by id
 Router.get('/course/:id/delete', Controller.deleteCourseById)
-
+Router.get('/courses/add', Controller.addForm)
+Router.post('/courses/add', Controller.addCourse)
 
 //edit course form
-Router.get('/course/:id/edit', Controller.editCourseForm)
+// Router.get('/course/:id/edit', Controller.editCourseForm)
 
 
 
@@ -69,8 +66,7 @@ Router.get('/courses', Controller.courseList)
 Router.get('/course/add', Controller.addcourseForm)
 Router.post('/course/add', Controller.addcourse)
 Router.get('/course/:id', Controller.courseDetail)
-Router.get('/course/:id/buy', Controller.showBuyForm)
-Router.post('/course/:id/buy', Controller.submitBuyForm)
+
 
 
 

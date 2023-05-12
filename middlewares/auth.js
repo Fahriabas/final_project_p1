@@ -12,7 +12,7 @@ const isloggedIn = function (req, res, next) {
 const isInstructor = function (req, res, next){
     // console.log(req.session, ' ini di middle ware isInstructor')
 
-    if (req.session.user && req.session.user.role !== 'instructor'){
+    if (req.session.user && req.session.user.role !== 'Instructor'){
         const error = 'You have no access'
         res.redirect (`login?error=${error}`)
     } else {

@@ -2,13 +2,13 @@
 const { User, Course, Transaction } = require('../models')
 
 class Controller{
-    static home(req, res){
-        // res.send('ini home')
-        User.findAll().then((response) => {
-            res.render('home' , response)
-        })
+    // static home(req, res){
+    //     // res.send('ini home')
+    //     User.findAll().then((response) => {
+    //         res.render('home' , response)
+    //     })
         
-    }
+    // }
     // static createUser(req, res){
     //     // res.send('form create User')
     //     const {username , password} = req.body
@@ -37,7 +37,7 @@ class Controller{
     //     req.session.destroy ((err) => {
     //         if (err) res.send (err)
     //         else {
-    //             res.redirect 
+    //             res.redirect('/')
     //         }
     //     })
     // }

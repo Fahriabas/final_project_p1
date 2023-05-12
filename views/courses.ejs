@@ -8,9 +8,12 @@
     <title>List Courses</title>
 </head>
 <body>
-    <header> List Courses </header>
+    <h1>List Courses</h1>
 
-    <a href="/courses/add"> Add New Courses </a>
+
+
+    <a href="/courses/add" class="btn btn-primary"> Add New Course</a>
+    <a href="/logout" class="btn btn-danger">Log Out</a>
     <main>
         <div class="d-flex justify-content-center align-items-center flex-wrap gap-3">
             <% courses.forEach(el => { %>

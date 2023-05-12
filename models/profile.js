@@ -22,6 +22,23 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Profile',
+    validate: {
+      nameNotEmpty() {
+        if (!this.name) {
+          throw new Error('Name cannot be empty');
+        }
+      },
+      locationNotEmpty() {
+        if (!this.gender) {
+          throw new Error('Gender cannot be empty');
+        }
+      },
+      imageUrlValid() {
+        if (!/^https?:\/\/.+/.test(this.imageUrl)) {
+          throw new Error('Profile image URL must start with http:// or https://');
+        }
+      }
+    }
   });
   return Profile;
 };

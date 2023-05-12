@@ -23,10 +23,29 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     description: DataTypes.STRING,
     category: DataTypes.STRING,
+    price: DataTypes.INTEGER,
     UserId: DataTypes.INTEGER
+    
   }, {
     sequelize,
     modelName: 'Course',
+    validate: {
+      nameNotEmpty() {
+        if (!this.name) {
+          throw new Error('Course name cannot be empty');
+        }
+      },
+      descriptionNotEmpty() {
+        if (!this.description) {
+          throw new Error('Description  cannot be empty');
+        }
+      },
+      categoryNotEmpty() {
+        if (!this.category) {
+          throw new Error('Category  cannot be empty');
+        }
+      }
+    }
   });
   return Course;
 };

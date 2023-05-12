@@ -3,6 +3,18 @@ const { checkPassword } = require('../helpers/bcrypt')
 const { User, Course, Transaction, Profile } = require('../models')
 
 class UserController{
+
+    static home(req, res){
+        // res.send('ini home')
+        User.findAll().then((response) => {
+            res.render('home' , response)
+        })
+        
+    }
+
+    static loginForm(req, res){
+        res.render('home')
+    }
     static registerForm(req, res){
         // res.send('ini registerForm')
         res.render('register-user')
@@ -16,16 +28,16 @@ class UserController{
             email,password, role, gender
         })
         .then(newUser => {
-            res.redirect('/')
+            res.redirect('/login')
         })
         .catch(err => {
             res.send(err)
         })
     }
 
-    static loginForm(req, res){
-        res.render('login')
-    }
+    // static loginForm(req, res){
+    //     res.render('login')
+    // }
 
     static postLogin(req, res){
         const {email, password} = req.body
@@ -67,7 +79,8 @@ class UserController{
     }
 
     static detailcourse(req, res){
-        console.log(req.session , 'session fahri line 70');
+        // const session = req.session
+        // console.log(req.session , 'session fahri line 70');
         const { id } = req.params
         console.log(req.params);
         Course.findOne({
@@ -83,14 +96,26 @@ class UserController{
         })
     }
 
-    static buyCourses(req, res){
-        console.log(req.params)
-        // console.log(req.session, 'ini isinya');
-        const { id } = req.params
-        Transaction.create({
-            id,
-        })
+    // static buyCourses(req, res){
+    //     console.log(req.params)
+    //     // console.log(req.session, 'ini isinya');
+    //     const { id } = req.params
+    //     Transaction.create({
+    //         id,
+    //     })
+    // }
+
+    static buyCourse(req, res){
+        // console.log(req.params);
+        // Transaction.create({
+
+        // })
     }
+
+    static logout(req, res) {
+        req.session.destroy();
+        res.redirect('/login');
+      }
 }
 
 module.exports = UserController
